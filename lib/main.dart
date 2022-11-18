@@ -52,7 +52,7 @@ class _HomePageState extends State<HomePage> {
                           width: 270,
                           height: 400,
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(12),
                             image: DecorationImage(
                                 image: NetworkImage(
                                     'https://images.unsplash.com/photo-1486286701208-1d58e9338013?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'),
