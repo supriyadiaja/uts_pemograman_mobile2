@@ -1,6 +1,8 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+// ignore: depend_on_referenced_packages
+import 'package:date_time_picker/date_time_picker.dart';
 
 void main() {
   runApp(MyApp());
@@ -82,13 +84,46 @@ class _HomePageState extends State<HomePage> {
 
           // game
         } else if (currenIndex == 1) {
-          return Scaffold(
-            appBar: AppBar(
-              title: Text('Pertandingan'),
-            ),
-            body: Container(
-              child: _bulidListView(),
-            ),
+          return DefaultTabController(
+            initialIndex: 0,
+            length: tabs.length,
+            child: Scaffold(
+                appBar: AppBar(
+                  title: Text('Pertandingan'),
+                  bottom: TabBar(tabs: tabs),
+                ),
+                body: TabBarView(children: [
+                  Container(
+                    child: _bulidListView(),
+                  ),
+                  Column(
+                    children: [
+                      DateTimePicker(
+                        type: DateTimePickerType.dateTimeSeparate,
+                        dateMask: 'd MMM, yyyy',
+                        initialValue: DateTime.now().toString(),
+                        firstDate: DateTime(2000),
+                        lastDate: DateTime(2100),
+                        icon: Icon(Icons.event),
+                        dateLabelText: 'Date',
+                        timeLabelText: "Hour",
+                        // selectableDayPredicate: (date) {
+                        //   // Nonaktifkan hari akhir pekan untuk memilih kalender
+                        //   if (date.weekday == 6 || date.weekday == 7) {
+                        //     return false;
+                        //   }
+                        //   return true;
+                        // },
+                        onChanged: (val) => print(val),
+                        validator: (val) {
+                          print(val);
+                          return null;
+                        },
+                        onSaved: (val) => print(val),
+                      ),
+                    ],
+                  )
+                ])),
           );
           // Search
         } else if (currenIndex == 2) {
@@ -496,4 +531,13 @@ class _HomePageState extends State<HomePage> {
       },
     );
   }
+
+  final List<Tab> tabs = [
+    Tab(
+      text: 'Club',
+    ),
+    Tab(
+      text: 'Date',
+    ),
+  ];
 }

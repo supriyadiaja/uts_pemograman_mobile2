@@ -36,6 +36,7 @@ dependencies:
   group_list_view: ^1.1.1
 
 dev_dependencies:
+  date_time_picker: ^2.1.0
   flutter_lints: ^2.0.0
   flutter_test:
     sdk: flutter
