@@ -69,11 +69,22 @@ class _HomePageState extends State<HomePage> {
                       itemCount: 10,
                       itemBuilder: (context, index) {
                         return Container(
-                          height: 150,
-                          color: Colors.amber,
-                          margin: EdgeInsets.all(10),
-                          child: Center(
-                            child: Text('Gambar ke-${index + 1}'),
+                          child: Card(
+                            margin: EdgeInsets.all(10),
+                            elevation: 10,
+                            color: Color.fromARGB(
+                              255,
+                              100 + Random().nextInt(266),
+                              100 + Random().nextInt(266),
+                              100 + Random().nextInt(266),
+                            ),
+                            child: Container(
+                              height: 100,
+                              margin: EdgeInsets.all(10),
+                              child: Center(
+                                child: Text('Gambar ke-${index + 1}'),
+                              ),
+                            ),
                           ),
                         );
                       },
@@ -208,23 +219,29 @@ class _HomePageState extends State<HomePage> {
                   Column(
                     children: [
                       Container(
-                        height: 150,
+                        height: 130,
                         child: ListView.builder(
                           itemCount: 5,
                           scrollDirection: Axis.horizontal,
                           itemBuilder: (context, index) {
                             return Container(
-                              height: 75,
-                              width: 250,
-                              color: Color.fromARGB(
-                                255,
-                                100 + Random().nextInt(300),
-                                100 + Random().nextInt(300),
-                                100 + Random().nextInt(300),
-                              ),
-                              margin: EdgeInsets.all(10),
-                              child: Center(
-                                child: Text("Gambar ke- ${index + 1}"),
+                              child: Card(
+                                margin: EdgeInsets.all(10),
+                                elevation: 10,
+                                color: Color.fromARGB(
+                                  255,
+                                  100 + Random().nextInt(300),
+                                  100 + Random().nextInt(300),
+                                  100 + Random().nextInt(300),
+                                ),
+                                child: Container(
+                                  height: 75,
+                                  width: 250,
+                                  margin: EdgeInsets.all(10),
+                                  child: Center(
+                                    child: Text("Gambar ke- ${index + 1}"),
+                                  ),
+                                ),
                               ),
                             );
                           },
