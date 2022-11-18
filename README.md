@@ -1,6 +1,11 @@
-# tugas_uts
+Nama  : Supriyadi.
 
-A new Flutter project.
+NPM   : 20552011145.
+
+Kelas : TIF RM 20 CID.
+
+
+
 
 ## Getting Started
 
